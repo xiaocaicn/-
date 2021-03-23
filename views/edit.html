@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hero - Admin</title>
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <style>
+        .hero-list img {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="page-header container">
+            <h1>王者荣耀 <small>英雄管理器</small></h1>
+        </div>
+    </header>
+    <div class="container hero-list">
+        <form id='myform'>
+            <table class="table table-hover">
+                <tbody>
+                    <div class="usercontent">
+
+                    </div>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" id="sub" value="编辑"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script type="text/template" id='usercontentTemp'>
+        <tr>
+            <td>姓名：</td>
+            <td><input type="text" name="name" value='{{name}}'></td>
+        </tr>
+        <tr>
+            <td>性别：</td>
+            <td>
+                <input id="nan" name="gender" value="男" type="radio" {{gender == '男'? 'checked' : ''}}><label for="nan">男</label>
+                <input name="gender" value="女" type="radio" id="nv" {{gender == '女'? 'checked' : ''}}><label for="nv">女</label>
+            </td>
+        </tr>
+        <tr>
+            <td>头像：</td>
+            <td>
+                <img src="http://127.0.0.1:3002/images/{{img}}" alt="" id="photo" width="100"
+                    style='border: 1px solid #ccc;margin-bottom: 5px;'>
+                <input type="file" id="img">
+                <input type="hidden" name="id" value='{{id}}'>
+                <input type="hidden" name="img" value='{{img}}'>
+            </td>
+        </tr>
+    </script>
+    <script src="/libs/jquery.js"></script>
+    <script src="/libs/template-web.js"></script>
+    <script src="/libs/common.js"></script>
+    <script src="/js/edit.js"></script>
+</body>
+
+</html>

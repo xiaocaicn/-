@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../public/libs/jquery.js"></script>
+</head>
+
+<body>
+  <script>
+    function test(data) {
+      console.log(data);
+    }
+  </script>
+  <script>
+    $.ajax({
+      url: 'http://127.0.0.1:3008/getdata',
+      // dataType: 'jsonp',
+      success: function (res) {
+        console.log(res);
+      }
+    })
+  </script>
+  <!-- 
+    1.jsonp跨域本质上是利用了script标签的src属性的天然跨域特性来实现的
+    2.src没人规定只能请求js文件，只不过返回的结果默认会以js语法来解析
+    3.jsonp跨域和xhr没有任何的关系
+    4，jsonp只能发起get请求
+    5.jsonp跨域严重的依赖服务器的配置，服务器一定要返回符合js请求的字符串，在数据接口中，一定要返回函数的调用形式，且在函数调用形式中拼接后台数据 -->
+  <!-- <script src="http://127.0.0.1:3008/getdata?callback=test"></script> -->
+</body>
+
+</html>
